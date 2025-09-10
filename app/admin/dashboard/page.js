@@ -1,15 +1,19 @@
+
 // app/admin/dashboard/page.js - Updated with inventory navigation
+
 'use client'
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
+
 import DashboardHeader from './components/DashboardHeader';
 import StatsCards from './components/StatsCards';
 import SearchBar from './components/SearchAndFilter';
 import UserTable from './components/UserTable';
 import UserDetailModal from './components/UserDetailModal';
+
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -20,6 +24,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [selectedUser, setSelectedUser] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+
   const [totalRevenue, setTotalRevenue] = useState(0);
 
   // Fetch revenue data
@@ -131,12 +136,14 @@ export default function AdminDashboard() {
     // Debounce search
     const timeoutId = setTimeout(fetchUsers, 300);
     return () => clearTimeout(timeoutId);
+
   }, [searchTerm, supabase]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push('/login');
   };
+
 
   const handleCreateUser = () => {
     router.push('/admin/create-user');
@@ -150,10 +157,12 @@ export default function AdminDashboard() {
     router.push('/admin/inventory');
   };
 
+
   return (
     <div className="min-h-screen bg-gray-50">
       <DashboardHeader
         onCreateUser={handleCreateUser}
+
         onManagePolls={handleManagePolls}
         onManageInventory={handleManageInventory}
         onLogout={handleLogout}
@@ -173,16 +182,19 @@ export default function AdminDashboard() {
         placeholder="Search users by name or email..."
       />
      
+
       <UserTable
         users={users}
         onViewUser={(user) => setSelectedUser(user)}
         loading={loading}
       />
-     
+
       <UserDetailModal
         user={selectedUser}
         onClose={() => setSelectedUser(null)}
       />
     </div>
   );
+
 }
+
