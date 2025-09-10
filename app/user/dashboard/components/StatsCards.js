@@ -35,7 +35,7 @@ export default function StatsCards({ userStats }) {
 
       {/* Today's Status Card */}
       <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900">Today's Status</h3>
+        <h3 className="text-lg font-semibold text-gray-900">Today&apos;s Status</h3>
         <div className="mt-2">
           {userStats.todaysPollResponse ? (
             <div>
