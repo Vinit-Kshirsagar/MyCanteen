@@ -297,7 +297,7 @@ export default function InventoryTable({ onEdit, onDelete }) {
         <div className="flex flex-wrap gap-2">
           {searchTerm && (
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-              Search: "{searchTerm}"
+              Search: &quot;{searchTerm}&quot;
               <button 
                 onClick={() => setSearchTerm('')}
                 className="ml-2 text-blue-600 hover:text-blue-800"

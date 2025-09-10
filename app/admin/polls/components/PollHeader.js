@@ -27,7 +27,7 @@ export default function PollHeader({ onLogout, currentUser }) {
               <p className="text-sm text-gray-600">Manage daily meal attendance and confirmations</p>
             </div>
           </div>
-          /*<div className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <div className="text-right">
               <p className="text-sm font-medium text-gray-900">{currentUser?.email}</p>
               <p className="text-xs text-gray-600">Admin</p>
