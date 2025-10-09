@@ -133,7 +133,7 @@ export default function DashboardHeader({ onCreateUser, onManagePolls, onManageI
                 }}
                 className="w-full text-gray-600 hover:text-red-700 hover:bg-red-50 px-4 py-3 rounded-lg transition-all duration-150 text-left font-medium border border-transparent hover:border-red-200"
               >
-                Sign Out
+                Log Out
               </button>
             </div>
           </nav>
